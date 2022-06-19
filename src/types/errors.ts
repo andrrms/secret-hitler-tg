@@ -6,6 +6,8 @@ enum ERR {
   // Game
   ExistentGame = 'existentGame',
   GameNotFound = 'gameNotFound',
+
+  InvalidCallback = 'invalidCallback',
 }
 
 export default ERR;

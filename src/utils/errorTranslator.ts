@@ -8,8 +8,15 @@ export function translateError(err: Error) {
     case ERR.PlayerInGame: {
       return 'Você já está na partida!';
     }
+
+    case ERR.InvalidCallback: {
+      return 'Tempo esgotado';
+    }
     default: {
-      return 'Um erro fritou meu chip, contate @embriagado e informe o que aconteceu. Para a minha segurança, este jogo foi encerrado!';
+      return (
+        'Um erro fritou meu chip, contate @embriagado e informe o que aconteceu. Código de erro: ' +
+        err.message
+      );
     }
   }
 }

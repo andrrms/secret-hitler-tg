@@ -29,7 +29,7 @@ export default class Game {
         return 'enaction';
       default:
         throw new Error(
-          "Default statement on game round getter shouldn't be possible. Round value is " +
+          "Default statement on Game's round getter shouldn't be possible. Round value is " +
             this._round
         );
     }
@@ -47,5 +47,11 @@ export default class Game {
     if (!this.players.has(id)) throw new Error(ERR.PlayerNotFound);
 
     return this.players.get(id)!;
+  }
+
+  removePlayer(id: number) {
+    if (!this.players.has(id)) throw new Error(ERR.PlayerNotFound);
+
+    this.players.delete(id);
   }
 }
